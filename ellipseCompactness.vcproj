@@ -177,6 +177,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\imToUchar.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\myregion.cpp"
 				>
 			</File>
@@ -192,6 +196,10 @@
 			>
 			<File
 				RelativePath=".\imToDouble.h"
+				>
+			</File>
+			<File
+				RelativePath=".\imToUchar.h"
 				>
 			</File>
 			<File

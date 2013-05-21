@@ -1,6 +1,8 @@
 #include<opencv2/opencv.hpp>
 #include "myregion.h"
 #include "imToDouble.h"
+#include "imToUchar.h"
+
 #include<iostream>
 using namespace std;
 using namespace cv;
@@ -17,12 +19,14 @@ int main()
 
 	Mat result =myRegion(img,x1,y1,25);
 	imshow("region",result);
-	Mat fillHole=result.clone();		
-	
-	
-
-
-
+	Mat temp=Mat(result.rows,result.cols,CV_8UC1);	
+	result=imToUchar(result,temp);
+	Mat fillHole=result.clone();
+	floodFill(fillHole,Point(0,0),255);
+	bitwise_not(fillHole,fillHole);
+	imshow("floodFill",fillHole); 
+	add(result,fillHole,result);
+	imshow("È¥¶´ºó",result);
 
 
 
